@@ -174,11 +174,11 @@ namespace Grabacr07.KanColleViewer.Views.Controls
 
 			this.Update();
 
-            //var window = Window.GetWindow(this.WebBrowser);
-            //if (window != null)
-            //{
-            //    window.Width = this.WebBrowser.Width;
-            //}
+			//var window = Window.GetWindow(this.WebBrowser);
+			//if (window != null)
+			//{
+			//    window.Width = this.WebBrowser.Width;
+			//}
 		}
 
 		private void ApplyStyleSheet()
@@ -232,7 +232,10 @@ namespace Grabacr07.KanColleViewer.Views.Controls
 					object refIndex = i;
 					IHTMLDocument2 frame = CrossFrameIE.GetDocumentFromWindow((IHTMLWindow2)frames.item(ref refIndex));
 					if (frame != null && ((HTMLDocument)frame).getElementById("flashWrap") != null)
+					{
 						mainFrame = (HTMLDocument)frame;
+						break;
+					}
 					else
 						mainFrame = document;
 				}
